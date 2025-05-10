@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harry Potter Quest</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Harry Potter Quest</h1>
+<div id="lives-count">❤️ Lives: 5</div>
+  </header>
+<main>
+  <div class="container">
+    <!-- СТОРІНКА 1 -->
+    <section class="mntro" id="intro">
+      <h2>Welcome traveller to this quest about Harry Potter</h2>
+      <div class="character">
+        <img src="https://cdn.freelance.ru/download/2815366/file.jpg" alt="Hagrid">
+        <div class="wow">
+          <p>My name is Hagrid and I will explain you all</p>
+        </div>
+      </div>
+ <section class="instructions">
+      <h3>What you have to do to pass it:</h3>
+      <div class="box">
+        <p>
+          First you have to follow the instructions, there will be hints
+          throughout the quest. There will also be various puzzles and branching in the quest.
+        </p>
+      </div>
+      <div class="box">
+        <p>
+          In the end, your most important task is to defeat you know who...
+          well... Voldemort... Why did I say that?
+        </p>
+      </div>
+  </section>
+ <section class="rules">
+      <h3>Rules:</h3>
+      <div class="box">
+        <p>
+          You have 5 ❤️ lives in total, if you lose them all you will have to
+          finish the quest! There will be no second try! We haven’t learned how to reborn yet...
+        </p>
+      </div>
+ </section>
+      <button class="btn" onclick="showStage()">Start Quest</button>
+    </section>
+
+    <!-- СТОРІНКА 2 -->
+    <section id="stage1" class="stage">
+      <section id="scene-1" class="scene active">
+    <div class="row">
+      <div class="half">
+        <img src="https://i.postimg.cc/kX0j1g9B/Flux-Dev-a-dense-and-foreboding-dark-forest-at-night-with-towe-3.jpg" alt="Dark forest" />
+      </div>
+      <div class="half text-right">
+        <p>You are in the forest... Night is coming...<br>What will you do?</p>
+        <div class="options">
+          <button onclick="goToScene('scene-2')">Traveling at night despite the danger</button>
+          <button onclick="goToScene('scene-3')">Wait for the day... but it will take a long time</button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 2 -->
+  <section id="scene-2" class="scene">
+    <div class="row">
+      <div class="half">
+        <img src="https://i.postimg.cc/pVCzfQQd/image.png" alt="Night attack" />
+      </div>
+      <div class="half text-right">
+        <p>At night you were attacked by monsters... you couldn't escape -1 life</p>
+        <button  onclick="loseLife(); goToScene('scene-1')">Go back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 3 -->
+  <section id="scene-3" class="scene">
+    <div class="row">
+      <div class="half">
+        <img src="https://i.postimg.cc/V6Gs6NMz/image.png" alt="beast" />
+      </div>
+      <div class="half text-right">
+        <p>The day comes finally... Finally you met Hagrid and a  beast that told you a riddle.</p>
+        <button onclick="goToScene('scene-4')">Try to beat him</button>
+        <button onclick="goToScene('scene-5.1')">Try to guess</button>
+ <button onclick="goToScene('scene-1')">Back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 4 -->
+  <section id="scene-4" class="scene">
+  <div class="row">
+      <div class="half">
+        <img src="https://i.postimg.cc/x1DfqhkN/image.png" alt="Beast" />
+      </div>
+      <div class="half text-right">
+    <p>You tried to beat the beast but failed... -1 life</p>
+    <button class="go-back" onclick="loseLife(); goToScene('scene-3')">Go back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 5 -->
+  <section id="scene-5.1" class="scene">
+  <div class="row">
+      <div class="half">
+        <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/91430737-f0bf-4e61-91e9-f1a309ed8141/c24695e7-b70e-4838-9742-06283b39d279.jpg?w=512" alt="Familyt" />
+      </div>
+      <div class="half text-right">
+    <p>How many children are in the Weasley family?</p>
+    <button class="go-back" onclick="goToScene('scene-6')">7</button>
+<button class="go-back" onclick="goToScene('scene-5.2')">4</button>
+<button class="go-back" onclick="goToScene('scene-5.2')">6</button>
+      </div>
+    </div>
+  </section>
+<section id="scene-5.2" class="scene">
+  <div class="row">
+      <div class="half">
+        <img src="https://i.postimg.cc/k5hXM4Wq/image.png" alt="spiders" />
+      </div>
+      <div class="half text-right">
+    <p>You tried to guess the riddle.... And you failed! Okey, okey, I'll give you another chanse.</p>
+<p>What the most afraid of Ron Weasley</p>
+    <button class="go-back" onclick="goToScene('scene-5.3')">worms</button>
+<button class="go-back" onclick="goToScene('scene-6')">Spiders</button>
+      </div>
+    </div>
+  </section>
+<section id="scene-5.3" class="scene">
+  <div class="row">
+      <div class="half">
+        <img src="https://i.postimg.cc/j2YTCJ20/image.png" alt="Forest" />
+      </div>
+      <div class="half text-right">
+    <p>You tried to guess the riddle.... And you failed! you lose 1 life.</p>
+    <button class="go-back" onclick="loseLife(); goToScene('scene-3')">go back</button>
+      </div>
+    </div>
+  </section>
+<!-- Scene 6 -->
+<section id="scene-6" class="scene">
+  <div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/Sxv3Phmn/image.png" alt="Dark cave" />
+    </div>
+    <div class="half text-right">
+      <p>You entered a mysterious cave... a voice whispers: <br>"Only the worthy may pass..."</p>
+      <button onclick="goToScene('scene-7')">Step into the darkness</button>
+      <button onclick="goToScene('scene-8')">Try to find another way</button>
+    </div>
+  </div>
+</section>
+
+<!-- Scene 7 -->
+<section id="scene-7" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/nrGyzRNB/image.png" alt="Steps" />
+    </div>
+    <div class="half text-right">
+  <p>Inside the cave, there are two diferent steps... What you will choose?</p>
+  <button class="go-back" onclick="goToScene('scene-7.1')">Go left</button>
+<button class="go-back" onclick="goToScene('scene-8')">Go right</button>
+  </div>
+    </div>
+</section>
+
+<section id="scene-7.1" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/07911d6c-ab44-4da0-b3c6-cff317b39af4/Leonardo_Phoenix_10_An_elderly_witch_with_wrinkled_skin_and_si_3.jpg" alt="witch" />
+    </div>
+    <div class="half text-right">
+  <p>You've been going for 2 hours with no results... and then you see an old woman...</p>
+ <p> -Baby... Can you help me pick up my apples?</p>
+  <button class="go-back" onclick="goToScene('scene-7.7')">Help</button>
+<button class="go-back" onclick="goToScene('scene-7.2')">Ignore, move on</button>
+  </div>
+    </div>
+</section>
+<section id="scene-7.2" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/QxXLPDWb/image.png" alt="Dark cave" />
+    </div>
+    <div class="half text-right">
+  <p>You've been going for 5 hours with no results... and then you understand what you are gooing in a circle</p>
+  <button class="go-back" onclick="goToScene('scene-7.3')">go back</button>
+  </div>
+    </div>
+</section>
+<section id="scene-7.3" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/07911d6c-ab44-4da0-b3c6-cff317b39af4/Leonardo_Phoenix_10_An_elderly_witch_with_wrinkled_skin_and_si_0.jpg" alt="witch" />
+    </div>
+    <div class="half text-right">
+  <p>Finally you found her</p>
+  <p> -Grandma, why did you curse me?</p>
+  <p> -because you didn't help me, you fool.</p>
+  <button class="go-back" onclick="goToScene('scene-7.4')">to push her into the abyss</button>
+  </div>
+    </div>
+</section>
+<section id="scene-7.4" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/8ced221d-f071-4612-a567-a9bae2e07df9/Leonardo_Phoenix_10_A_dark_and_mysterious_abyss_depicted_in_sh_1.jpg" alt="abyss" />
+    </div>
+    <div class="half text-right">
+  <p>You tried to push her away, but grandma is not that simple... And then you realize that you yourself have found yourself in an abyss, in darkness.</p>
+  <button class="go-back" onclick="goToScene('scene-7.5')">move on</button>
+  </div>
+    </div>
+</section>
+<section id="scene-7.5" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/e4965f2e-4737-4d35-bf01-8f3cb88866ae/Leonardo_Phoenix_10_A_pair_of_piercing_yellow_eyes_gaze_out_of_0.jpg" alt="wolf" />
+    </div>
+    <div class="half text-right">
+  <p>In the darkness you see the eyes of wolves...</p>
+  <button class="go-back" onclick="goToScene('scene-7.6')">beat them</button>
+<button class="go-back" onclick="goToScene('scene-7.8')">escape</button>
+  </div>
+    </div>
+</section>
+<section id="scene-7.6" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/8e597c4c-2eef-448f-8a26-cf6bfcead907/Leonardo_Phoenix_10_a_majestic_yet_battered_wolf_its_gray_fur_2.jpg" alt="wolf" />
+    </div>
+    <div class="half text-right">
+  <p>You've beated them, but you lost 1 life</p>
+  <button class="go-back" onclick="loseLife(); goToScene('scene-8')">move on</button>
+
+  </div>
+    </div>
+</section>
+
+<section id="scene-7.7" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/3eedff60-0360-4130-b7be-8e269bb1d3dc/Leonardo_Phoenix_10_An_elderly_witch_with_wrinkled_skin_and_a_0.jpg" alt="potion" />
+    </div>
+    <div class="half text-right">
+  <p>You helped her and she gave you the potion.</p>
+  <button class="go-back" onclick=" goToScene('scene-8')">move on</button>
+
+  </div>
+    </div>
+</section>
+
+<section id="scene-7.8" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://cdn.leonardo.ai/users/5a09cc9d-4e84-4b25-9798-6bb1c4f9a2b1/generations/1b4eba22-b35a-43b5-9f70-3226f03918e1/Leonardo_Phoenix_10_A_weary_figure_slumped_and_defeated_lies_o_2.jpg" alt="person" />
+    </div>
+    <div class="half text-right">
+  <p>You wandered and grew weary and fell down without strength.</p>
+  <button class="go-back" onclick=" loseLife(); goToScene('scene-7')">go back on</button>
+  </div>
+    </div>
+</section>
+<!-- Scene 8 -->
+<section id="scene-8" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/SNXLm28N/image.png" alt="Dark cave" />
+    </div>
+    <div class="half text-right">
+  <p>You discovered a hidden path behind the cave... It may lead to a secret passage.</p>
+  <button onclick="goToScene('scene-9')">Follow the secret path</button>
+  </div>
+    </div>
+</section>
+
+<!-- Scene 9 -->
+<section id="scene-9" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/h4YxZDwF/image.png" alt="Invisibility cloak" />
+    </div>
+    <div class="half text-right">
+  <p>You found a magical object — the Invisibility Cloak! This will help you later.</p>
+  <button onclick="goToScene('scene-11')">Continue the journey</button>
+  </div>
+    </div>
+</section>
+</section></div>
+<!-- Scene 10 -->
+<section id="scene-11" class="scene">
+  <div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/7LXJ3w7W/image.png" alt="Guardian statue" />
+    </div>
+    <div class="half text-right">
+      <p>You approach the final gate... A stone guardian blocks the way!</p>
+      <p>Do you use your Invisibility Cloak or prepare to fight?</p>
+      <button onclick="useCloak()">Use Cloak</button>
+      <button onclick="fightGuardian()">Fight</button>
+    </div>
+  </div>
+</section>
+<section id="scene-12" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/7hzgMjqJ/image.png" alt="Dark cave" />
+    </div>
+    <div class="half text-right">
+  <p>You quietly sneak past the guardian. The cloak protected you!</p>
+  <button onclick="goToScene('scene-14')">Enter the Final Chamber</button>
+  </div>
+    </div>
+</section>
+<!-- Scene 13 -->
+<section id="scene-13" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/htc9TC6h/image.png" alt="Dark cave" />
+    </div>
+    <div class="half text-right">
+  <p>You battled the guardian! You won... but were injured and lost 1 life.</p>
+  <button onclick="loseLife(); goToScene('scene-14')">Continue</button>
+  </div>
+    </div>
+</section>
+<!-- Scene 14 -->
+<section id="scene-14" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/Bv1Q63pF/image.png" alt="Volondemort" />
+    </div>
+    <div class="half text-right">
+  <h2>You enter the final chamber...</h2>
+  <p>A dark figure appears — Voldemort himself!</p>
+  <p>He hisses: "So, you've come this far... Let's end this."</p>
+  <p>Choose your action:</p>
+  <button onclick="useWand()">🪄 Use Wand</button>
+  <button onclick="usePotion()">🧪 Use Potion</button>
+  <button onclick="useCloakBoss()">🧥 Use Invisibility Cloak</button>
+  </div>
+    </div>
+</section>
+<!-- Scene 15 -->
+<section id="scene-15" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/63tJXxmt/image.png" alt="Dark cave" />
+    </div>
+    <div class="half text-right">
+  <p>You raise your wand and cast <strong>Expelliarmus</strong>! Voldemort counters with Avada Kedavra!</p>
+  <p>You narrowly dodge.</p>
+  <button onclick=" goToScene('scene-18')">Keep fighting!</button>
+  </div>
+    </div>
+</section>
+<!-- Scene 16 -->
+<section id="scene-16" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/xTxzN0vp/image.png" alt="potion" />
+    </div>
+    <div class="half text-right">
+  <p>You drink a powerful Elixir of Protection. A magical shield surrounds you.</p>
+  <p>Voldemort's curse hits the shield — you're safe!</p>
+  <button onclick="goToScene('scene-18')">Counterattack!</button>
+  </div>
+    </div>
+</section>
+<!-- Scene 17 -->
+<section id="scene-17" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/9Fvk2jDK/image.png"/>
+    </div>
+    <div class="half text-right">
+  <p>You throw the cloak over yourself and disappear.</p>
+  <p>Voldemort loses sight of you — now is your chance!</p>
+  <button onclick="goToScene('scene-18')">Strike silently</button>
+  </div>
+    </div>
+</section>
+<!-- Scene 18 -->
+<section id="scene-18" class="scene">
+<div class="row">
+    <div class="half">
+      <img src="https://i.postimg.cc/J00FrrcV/image.png" alt="expecto patronum" />
+    </div>
+    <div class="half text-right">
+  <p>You gather all your strength and cast the final spell — <strong>"Expecto Patronum!"</strong></p>
+  <p>A blinding light fills the chamber. Voldemort screams and fades away into shadows.</p>
+  <h2>🏆 You won the battle!</h2>
+  <button onclick="goToScene('scene-1')">Play Again</button>
+  </div>
+    </div>
+</section>
+</main>
+
+<footer>
+  <p>🧙‍♂️ Harry Potter Quest &copy; 2025. Created for magical adventures.</p>
+  <p>Made with 🪄 & ❤️ by Vlad Moskalenko</p>
+  <div class="social-links">
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />
+    </a>
+    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145812.png" alt="Twitter" />
+    </a>
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+    </a>
+    <a href="https://github.com" target="_blank" aria-label="GitHub">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
+    </a>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
