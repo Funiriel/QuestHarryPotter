@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Quicksand&display=swap');
+
+body {
+  padding: 0;
+   font-family: 'Georgia', serif;
+  background-size: cover;
+  color: white;
+  
+  background-color: #1c1c1c;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+button {
+  display: block;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #5a3e2b;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin-top: 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+header, footer {
+  background-color: #7a6229;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  
+}
+
+
+.character img {
+  width: 200px;
+  border-radius: 10px;
+
+}
+.character {
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 20px;
+  flex-wrap: wrap;
+}
+.box {
+  background: #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+color: black;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #5a3e2b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.stage {
+  display: none;
+}
+
+.stage.visible {
+  display: block;
+}
+
+.stage img {
+  max-width: 100%;
+  margin: 1rem 0;
+}
+
+.wow {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  max-width: 250px;
+  font-style: italic;
+  margin: 10px;
+}
+.mntro h2 {
+  text-align: center;
+  font-weight: normal;
+  color: #e58d8d;
+}
+
+.instructions h3,
+.rules h3 {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+.scene {
+  display: none;
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 0;
+  animation: fadeIn 0.5s ease-in-out;
+
+}
+
+.scene.active {
+  display: block;
+}
+
+img {
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+}
+
+
+
+.options {
+  margin-top: 10px;
+}
+
+
+
+.go-back {
+  background-color: #bbb;
+  font-style: italic;
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.text-right {
+  text-align: right;
+
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.half {
+   flex: 1;
+  min-width: 250px;
+
+}
+
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .half {
+    width: 100%;
+  }
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #f0d066;
+}
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+button:hover {
+  background-color: #7b533e;
+}
+
+button.go-back {
+  background-color: #3e3e3e;
+  margin-top: 30px;
+}
+
+footer {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  background-color: #2e2e2e;
+  padding: 20px 0;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.9em;
+  margin-top: 40px;
+  border-top: 2px solid #5a3e2b;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.social-links img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
