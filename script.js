@@ -10,7 +10,7 @@ function loseLife() {
   updateLives();
   if (lives <= 0) {
     alert("You lost all your lives! Game over.");
-    restartGame();
+    goToScene('scene-1');
   }
 }
 function restartGame() {
