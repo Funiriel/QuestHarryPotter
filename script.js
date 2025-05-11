@@ -20,10 +20,6 @@ function restartGame() {
 }
 
 
-function goToSceneWithLifeLoss() {
-  loseLife();
-  goToScene('scene-1');
-}
 
 function goToScene(id) {
   document.querySelectorAll('.scene').forEach(scene => {
@@ -46,11 +42,7 @@ function fightGuardian() {
   goToScene('scene-13');
 }
 
-function goToSceneWithLifeLossAndMessage(id, message) {
-  loseLife();
-  alert(message);
-  goToScene('scene-1');
-}
+
 function useWand() {
   goToScene('scene-15');
 }
